@@ -3,182 +3,193 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>H Rank Pro - রোজগারের রাজা</title>
+    <title>H Rank Pro - এডমিন সহ</title>
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         *{margin:0;padding:0;box-sizing:border-box;font-family:'Hind Siliguri',sans-serif;}
-        body{background:linear-gradient(135deg,#667eea,#764ba2);min-height:100vh;color:#fff;display:flex;align-items:center;justify-content:center;}
-        .container{max-width:420px;width:95%;background:#fff;color:#333;border-radius:20px;overflow:hidden;box-shadow:0 15px 40px rgba(0,0,0,0.4);}
-        header{background:#e74c3c;color:#fff;padding:20px;text-align:center;font-size:24px;font-weight:700;}
-        .form{padding:30px;text-align:center;}
+        body{background:linear-gradient(135deg,#1e3c72,#2a5298);min-height:100vh;color:#fff;display:flex;align-items:center;justify-content:center;}
+        .container{max-width:420px;width:95%;background:#fff;color:#333;border-radius:20px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,0.5);}
+        header{background:#e74c3c;color:#fff;padding:20px;text-align:center;font-size:26px;font-weight:700;}
+        .form,.dashboard,.admin{display:none;padding:25px;}
         input{width:100%;padding:15px;margin:12px 0;border-radius:12px;border:2px solid #ddd;font-size:16px;}
         button{width:100%;background:#e74c3c;color:#fff;padding:15px;border:none;border-radius:12px;font-size:18px;cursor:pointer;margin-top:10px;}
         button:hover{background:#c0392b;}
-        .dashboard{display:none;padding:20px;}
-        .balance{background:#ffebee;padding:20px;border-radius:15px;margin:15px 0;text-align:center;}
-        .balance h2{font-size:28px;color:#e74c3c;}
-        .rank-box{background:#f8f9fa;padding:20px;border-radius:15px;margin:15px 0;}
-        .rank-item{background:#fff3e0;padding:18px;margin:10px 0;border-radius:12px;text-align:center;box-shadow:0 5px 15px rgba(0,0,0,0.1);}
-        .rank-item h3{font-size:18px;color:#e67e22;margin-bottom:10px;}
-        .btn-small{background:#e74c3c;color:#fff;padding:10px 20px;border:none;border-radius:30px;cursor:pointer;}
-        .withdraw{background:#fff9c4;padding:20px;border-radius:15px;margin:15px 0;text-align:center;}
-        .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);z-index:999;}
-        .modal-content{background:#fff;margin:20% auto;padding:25px;width:90%;max-width:400px;border-radius:15px;text-align:center;color:#333;}
-        .close{float:right;font-size:30px;cursor:pointer;color:#aaa;}
-        .info{color:#e74c3c;font-weight:600;margin-top:15px;}
+        .balance{background:#e8f5e9;padding:20px;border-radius:15px;margin:15px 0;text-align:center;}
+        .balance h2{font-size:30px;color:#27ae60;}
+        .rank-item{background:#fff3e0;padding:18px;margin:12px 0;border-radius:12px;text-align:center;box-shadow:0 5px 15px rgba(0,0,0,0.1);}
+        .btn-small{background:#e74c3c;color:#fff;padding:10px 25px;border:none;border-radius:30px;cursor:pointer;}
+        .admin-btn{background:#8e44ad;color:#fff;margin-top:15px;}
+        .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);z-index:999;}
+        .modal-content{background:#fff;margin:15% auto;padding:25px;width:90%;max-width:400px;border-radius:15px;color:#333;text-align:center;}
+        .close{float:right;font-size:32px;cursor:pointer;color:#aaa;}
+        .info{color:#e74c3c;font-weight:700;margin:15px 0;}
+        .user-list{background:#f8f9fa;padding:15px;border-radius:10px;margin:10px 0;max-height:300px;overflow-y:auto;}
     </style>
 </head>
 <body>
 
-<div class="container" id="mainContainer">
+<div class="container">
 
-    <!-- লগইন / রেজিস্টার ফর্ম -->
-    <div id="loginForm">
+    <!-- লগইন ফর্ম -->
+    <div id="loginForm" class="form" style="display:block;">
         <header>H Rank Pro</header>
-        <div class="form">
-            <input type="tel" id="phone" placeholder="মোবাইল নম্বর (017xxxxxxxx)" required>
-            <input type="password" id="pass" placeholder="পাসওয়ার্ড" required>
-            <button onclick="login()">লগইন / রেজিস্টার করুন</button>
-            <div class="info">নতুন হলে অটো রেজিস্টার হবে + ফ্রি ৪ দিন ৬০ টাকা!</div>
-        </div>
+        <input type="tel" id="phone" placeholder="মোবাইল নম্বর" value="01344034681">
+        <input type="password" id="pass" placeholder="পাসওয়ার্ড" value="password09">
+        <button onclick="login()">লগইন / রেজিস্টার</button>
+        <div class="info">এডমিন: 01344034681 | Pass: password09</div>
     </div>
 
-    <!-- ড্যাশবোর্ড -->
+    <!-- ইউজার ড্যাশবোর্ড -->
     <div id="dashboard" class="dashboard">
-        <header>H Rank Pro - স্বাগতম!</header>
-        
+        <header>ড্যাশবোর্ড - <span id="userPhone"></span></header>
         <div class="balance">
             <h2>ব্যালেন্স: ৳ <span id="balance">0</span></h2>
             <p>ফ্রি বোনাস দিন: <span id="freeDay">0</span>/4</p>
-            <p>আপনার র‍্যাঙ্ক: <span id="rank">None</span></p>
+            <p>র‍্যাঙ্ক: <span id="rank">None</span></p>
         </div>
 
-        <div class="rank-box">
-            <div class="rank-item">
-                <h3>H1 → ৫০০ টাকা = রোজ ৫০ টাকা</h3>
-                <button class="btn-small" onclick="upgrade('H1',500,50)">আপগ্রেড করুন</button>
-            </div>
-            <div class="rank-item">
-                <h3>H2 → ৫০০০ টাকা = রোজ ৪০০ টাকা</h3>
-                <button class="btn-small" onclick="upgrade('H2',5000,400)">আপগ্রেড করুন</button>
-            </div>
-            <div class="rank-item">
-                <h3>H3 → ১৫০০০ টাকা = রোজ ১৩০০ টাকা</h3>
-                <button class="btn-small" onclick="upgrade('H3',15000,1300)">আপগ্রেড করুন</button>
-            </div>
+        <div class="rank-item">
+            <h3>H1 → ৫০০ টাকা = রোজ ৫০</h3>
+            <button class="btn-small" onclick="upgrade('H1',500,50)">আপগ্রেড</button>
+        </div>
+        <div class="rank-item">
+            <h3>H2 → ৫০০০ টাকা = রোজ ৪০০</h3>
+            <button class="btn-small" onclick="upgrade('H2',5000,400)">আপগ্রেড</button>
+        </div>
+        <div class="rank-item">
+            <h3>H3 → ১৫০০০ টাকা = রোজ ১৩০০</h3>
+            <button class="btn-small" onclick="upgrade('H3',15000,1300)">আপগ্রেড</button>
         </div>
 
-        <div class="withdraw">
-            <h3>উইথড্র করুন (মিনিমাম ৩০০)</h3>
-            <button class="btn-small" onclick="openWithdraw()">উইথড্র রিকোয়েস্ট</button>
-            <button style="background:#e67e22;margin-top:10px;" class="btn-small" onclick="logout()">লগআউট</button>
+        <button class="btn-small" onclick="openWithdraw()">উইথড্র করুন</button>
+        <button class="btn-small" style="background:#34495e;" onclick="logout()">লগআউট</button>
+
+        <!-- এডমিন বাটন -->
+        <div id="adminBtn" style="display:none;">
+            <button class="btn-small admin-btn" onclick="openAdmin()">⚡ এডমিন প্যানেল</button>
         </div>
+    </div>
+
+    <!-- এডমিন প্যানেল -->
+    <div id="adminPanel" class="dashboard">
+        <header style="background:#8e44ad;">⚡ এডমিন প্যানেল</header>
+        <div class="balance">
+            <h2>মোট ইউজার: <span id="totalUsers">0</span></h2>
+            <h2>মোট ব্যালেন্স: ৳ <span id="totalBalance">0</span></h2>
+        </div>
+        <div class="user-list" id="userList"></div>
+        <button class="btn-small" style="background:#27ae60;" onclick="document.getElementById('adminPanel').style.display='none'; document.getElementById('dashboard').style.display='block';">ব্যাক</button>
     </div>
 </div>
 
 <!-- উইথড্র মডাল -->
 <div class="modal" id="withdrawModal">
     <div class="modal-content">
-        <span class="close" onclick="document.getElementById('withdrawModal').style.display='none'">×</span>
+        <span class="close" onclick="this.parentElement.parentElement.style.display='none'">×</span>
         <h2>উইথড্র করুন</h2>
-        <input type="text" placeholder="bKash/Nagad নম্বর" id="wNumber" style="width:100%;padding:12px;margin:10px 0;border-radius:10px;border:1px solid #ddd;">
-        <input type="number" placeholder="পরিমাণ (টাকা)" id="wAmount" style="width:100%;padding:12px;margin:10px 0;border-radius:10px;border:1px solid #ddd;">
-        <button style="background:#4caf50;" onclick="submitWithdraw()">সাবমিট করুন</button>
+        <input type="text" placeholder="bKash/Nagad নম্বর" id="wNumber">
+        <input type="number" placeholder="পরিমাণ" id="wAmount">
+        <button style="background:#27ae60;" onclick="submitWithdraw()">সাবমিট</button>
     </div>
 </div>
 
 <script>
-// লগইন / রেজিস্টার
+const ADMIN_PHONE = "01344034681";
+const ADMIN_PASS = "password09";
+
 function login(){
-    const phone = document.getElementById('phone').value;
+    const phone = document.getElementById('phone').value.trim();
     const pass = document.getElementById('pass').value;
-    if(phone.length>=11 && pass.length>=6){
-        const user = {phone, pass, balance:0, freeDay:0, rank:'None', dailyIncome:0, lastBonus:Date.now()};
-        localStorage.setItem('user', JSON.stringify(user));
-        showDashboard();
-    }else{
-        alert('সঠিক নম্বর ও পাসওয়ার্ড দিন!');
+
+    if(phone.length < 11 || pass.length < 6){
+        alert("সঠিক তথ্য দিন!");
+        return;
     }
+
+    let user = {phone, pass, balance:0, freeDay:0, rank:"None", dailyIncome:0, lastBonus:0, lastClaim:0};
+
+    if(phone === ADMIN_PHONE && pass === ADMIN_PASS){
+        user.isAdmin = true;
+        user.balance = 999999;
+        user.rank = "H3 (Admin)";
+    }
+
+    localStorage.setItem('user', JSON.stringify(user));
+    showDashboard();
 }
 
-// ড্যাশবোর্ড দেখাও
 function showDashboard(){
     const user = JSON.parse(localStorage.getItem('user'));
     if(!user){ window.location.reload(); }
 
     document.getElementById('loginForm').style.display = 'none';
     document.getElementById('dashboard').style.display = 'block';
-
+    document.getElementById('userPhone').innerText = user.phone;
     document.getElementById('balance').innerText = user.balance;
     document.getElementById('freeDay').innerText = user.freeDay;
     document.getElementById('rank').innerText = user.rank;
 
-    // ফ্রি বোনাস চেক (৪ দিন)
-    const today = Date.now();
-    if(user.freeDay < 4 && (today - user.lastBonus) > 86400000){ // 24 ঘণ্টা
-        user.balance += 60;
-        user.freeDay += 1;
-        user.lastBonus = today;
-        localStorage.setItem('user', JSON.stringify(user));
-        alert('অভিনন্দন! ফ্রি বোনাস ৬০ টাকা যোগ হয়েছে!');
+    if(user.isAdmin){
+        document.getElementById('adminBtn').style.display = 'block';
     }
 
-    // র‍্যাঙ্ক থেকে ডেইলি ইনকাম (ডেমো)
-    if(user.rank !== 'None' && user.dailyIncome > 0){
-        const lastClaim = user.lastClaim || 0;
-        if((today - lastClaim) > 86400000){
-            user.balance += user.dailyIncome;
-            user.lastClaim = today;
-            localStorage.setItem('user', JSON.stringify(user));
-            alert(`আপনার \( {user.rank} র‍্যাঙ্ক থেকে \){user.dailyIncome} টাকা যোগ হয়েছে!`);
-        }
-    }
-
-    document.getElementById('balance').innerText = user.balance;
-    document.getElementById('freeDay').innerText = user.freeDay;
-    document.getElementById('rank').innerText = user.rank;
+    // ফ্রি বোনাস + ডেইলি ইনকাম
+    autoBonusAndIncome(user);
 }
 
-// র‍্যাঙ্ক আপগ্রেড
-function upgrade(rankName, deposit, daily){
-    if(confirm(`\( {rankName} এর জন্য \){deposit} টাকা ডিপোজিট করবেন?`)){
+function autoBonusAndIncome(user){
+    const now = Date.now();
+    if(user.freeDay < 4 && (now - user.lastBonus) > 10000){ // ডেমোর জন্য 10 সেকেন্ড
+        user.balance += 60;
+        user.freeDay += 1;
+        user.lastBonus = now;
+        localStorage.setItem('user', JSON.stringify(user));
+        alert("ফ্রি বোনাস ৬০ টাকা যোগ হয়েছে!");
+    }
+    if(user.dailyIncome > 0 && (now - user.lastClaim) > 10000){
+        user.balance += user.dailyIncome;
+        user.lastClaim = now;
+        localStorage.setItem('user', JSON.stringify(user));
+        alert(`\( {user.rank} থেকে \){user.dailyIncome} টাকা যোগ হয়েছে!`);
+    }
+    document.getElementById('balance').innerText = user.balance;
+}
+
+function upgrade(rank, deposit, daily){
+    if(confirm(`\( {rank} এর জন্য \){deposit} টাকা ডিপোজিট?`)){
         const user = JSON.parse(localStorage.getItem('user'));
-        user.balance += deposit; // ডিপোজিট সিমুলেশন
-        user.rank = rankName;
+        user.balance += deposit;
+        user.rank = rank;
         user.dailyIncome = daily;
         localStorage.setItem('user', JSON.stringify(user));
-        alert(`\( {rankName} আপগ্রেড সফল! এখন থেকে রোজ \){daily} টাকা পাবেন।`);
+        alert(`\( {rank} সফল! রোজ \){daily} টাকা পাবেন।`);
         showDashboard();
     }
 }
 
-// উইথড্র
-function openWithdraw(){
-    document.getElementById('withdrawModal').style.display = 'block';
-}
+function openWithdraw(){ document.getElementById('withdrawModal').style.display = 'block'; }
 function submitWithdraw(){
-    const amount = document.getElementById('wAmount').value;
-    const number = document.getElementById('wNumber').value;
-    if(amount >= 300 && number){
-        alert(`উইথড্র রিকোয়েস্ট সফল! \( {amount} টাকা \){number} নম্বরে ২৪ ঘণ্টায় পাঠানো হবে।`);
+    const amt = document.getElementById('wAmount').value;
+    if(amt >= 300){
+        alert(`উইথড্র রিকোয়েস্ট সফল! ${amt} টাকা ২৪ ঘণ্টায় পাঠানো হবে।`);
         document.getElementById('withdrawModal').style.display = 'none';
-    }else{
-        alert('মিনিমাম ৩০০ টাকা এবং সঠিক নম্বর দিন!');
-    }
+    }else alert("মিনিমাম ৩০০ টাকা!");
 }
 
-// লগআউট
+function openAdmin(){
+    document.getElementById('dashboard').style.display = 'none';
+    document.getElementById('adminPanel').style.display = 'block';
+    document.getElementById('totalUsers').innerText = "1 (ডেমো)";
+    document.getElementById('totalBalance').innerText = "999999+";
+    document.getElementById('userList').innerHTML = "<p>এডমিন মোড চালু ⚡</p><p>সবকিছু কন্ট্রোল করতে পারবেন</p>";
+}
+
 function logout(){
     localStorage.clear();
     window.location.reload();
 }
 
-// পেজ লোডে চেক
-window.onload = function(){
-    if(localStorage.getItem('user')){
-        showDashboard();
-    }
-}
+window.onload = () => localStorage.getItem('user') && showDashboard();
 </script>
 </body>
 </html>
