@@ -1,195 +1,177 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>H Rank Pro - এডমিন সহ</title>
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Website</title>
     <style>
-        *{margin:0;padding:0;box-sizing:border-box;font-family:'Hind Siliguri',sans-serif;}
-        body{background:linear-gradient(135deg,#1e3c72,#2a5298);min-height:100vh;color:#fff;display:flex;align-items:center;justify-content:center;}
-        .container{max-width:420px;width:95%;background:#fff;color:#333;border-radius:20px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,0.5);}
-        header{background:#e74c3c;color:#fff;padding:20px;text-align:center;font-size:26px;font-weight:700;}
-        .form,.dashboard,.admin{display:none;padding:25px;}
-        input{width:100%;padding:15px;margin:12px 0;border-radius:12px;border:2px solid #ddd;font-size:16px;}
-        button{width:100%;background:#e74c3c;color:#fff;padding:15px;border:none;border-radius:12px;font-size:18px;cursor:pointer;margin-top:10px;}
-        button:hover{background:#c0392b;}
-        .balance{background:#e8f5e9;padding:20px;border-radius:15px;margin:15px 0;text-align:center;}
-        .balance h2{font-size:30px;color:#27ae60;}
-        .rank-item{background:#fff3e0;padding:18px;margin:12px 0;border-radius:12px;text-align:center;box-shadow:0 5px 15px rgba(0,0,0,0.1);}
-        .btn-small{background:#e74c3c;color:#fff;padding:10px 25px;border:none;border-radius:30px;cursor:pointer;}
-        .admin-btn{background:#8e44ad;color:#fff;margin-top:15px;}
-        .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);z-index:999;}
-        .modal-content{background:#fff;margin:15% auto;padding:25px;width:90%;max-width:400px;border-radius:15px;color:#333;text-align:center;}
-        .close{float:right;font-size:32px;cursor:pointer;color:#aaa;}
-        .info{color:#e74c3c;font-weight:700;margin:15px 0;}
-        .user-list{background:#f8f9fa;padding:15px;border-radius:10px;margin:10px 0;max-height:300px;overflow-y:auto;}
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f6f6f6;
+        }
+        header {
+            background: #111;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background: #222;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .hero {
+            padding: 60px 20px;
+            text-align: center;
+            background: #fff;
+        }
+        .section {
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #111;
+            color: white;
+        }
     </style>
 </head>
 <body>
+<header>
+    <h1>আমার ওয়েবসাইট</h1>
+    <p>এখানে আপনার ব্যবসা বা ব্যক্তিগত তথ্য দেখাতে পারবেন</p>
+</header>
 
-<div class="container">
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+</nav>
 
-    <!-- লগইন ফর্ম -->
-    <div id="loginForm" class="form" style="display:block;">
-        <header>H Rank Pro</header>
-        <input type="tel" id="phone" placeholder="মোবাইল নম্বর" value="01344034681">
-        <input type="password" id="pass" placeholder="পাসওয়ার্ড" value="password09">
-        <button onclick="login()">লগইন / রেজিস্টার</button>
-        <div class="info">এডমিন: 01344034681 | Pass: password09</div>
+<section class="hero" id="home">
+    <h2>Welcome!</h2>
+    <p>এখানে নিজের একটি ইমপোর্টেন্ট লাইন লিখতে পারেন।</p>
+</section>
+
+<section class="section" id="about">
+    <h2>About Me</h2>
+    <p>এখানে নিজের সম্পর্কে বিস্তারিত লিখুন। আপনি কে, কি করেন, এবং আপনার লক্ষ্য কি।</p>
+</section>
+
+<section class="section" id="services">
+    <h2>My Services</h2>
+    <ul>
+        <li>আপনার সার্ভিস ১</li>
+        <li>আপনার সার্ভিস ২</li>
+        <li>আপনার সার্ভিস ৩</li>
+    </ul>
+</section>
+
+<section class="section" id="contact">
+    <h2>Contact</h2>
+    <p>📞 ফোন: এখানে আপনার নম্বর</p>
+    <p>📧 ইমেইল: এখানে আপনার ইমেইল</p>
+    <p>🌐 ফেসবুক: আপনার পেজ/প্রোফাইল লিংক</p>
+</section>
+
+<footer>
+    <p>© আপনার নাম - All Rights Reserved</p>
+</footer>
+
+<!-- Deposit & Withdraw Section -->
+<section class="section" id="depo-witr">
+    <h2>Deposit & Withdraw System</h2>
+    <p>এখানে ব্যবহারকারীরা আপনার মাধ্যমে টাকা জমা (Deposit) বা উত্তোলন (Withdraw) করতে পারবে।</p>
+
+    <h3>💰 Deposit System</h3>
+    <p>বিকাশ/নগদ/রকেট নম্বরে টাকা পাঠানোর পর স্ক্রিনশটসহ নিচের ফরম পূরণ করুন।</p>
+    <ul>
+        <li>📌 বিকাশ নম্বর: এখানে দিন</li>
+        <li>📌 নগদ নম্বর: এখানে দিন</li>
+        <li>📌 রকেট নম্বর: এখানে দিন</li>
+    </ul>
+
+    <h3>📤 Withdraw System</h3>
+    <p>আপনার অ্যাকাউন্ট ব্যালেন্স থেকে টাকা তুলতে চাইলে নিচের মাধ্যমে আবেদন করুন:</p>
+    <ul>
+        <li>✔ সর্বনিম্ন Withdraw: 600 টাকা</li>
+        <li>✔ প্রসেসিং টাইম: 5–30 মিনিট</li>
+        <li>✔ সাপোর্ট নম্বর: এখানে দিন</li>
+    </ul>
+
+    <h3>📨 Request Form</h3>
+    <p>নিচের ফর্ম ব্যবহার করে Deposit/Withdraw রিকোয়েস্ট পাঠান:</p>
+    <form>
+        <label>আপনার নাম:</label><br>
+        <input type="text" style="width:100%;padding:8px;margin:5px 0;"><br>
+
+        <label>ফোন নম্বর:</label><br>
+        <input type="text" style="width:100%;padding:8px;margin:5px 0;"><br>
+
+        <label>রিকোয়েস্ট টাইপ:</label><br>
+        <select style="width:100%;padding:8px;margin:5px 0;">
+            <option>Deposit</option>
+            <option>Withdraw</option>
+        </select><br>
+
+        <label>টাকার পরিমাণ:</label><br>
+        <input type="number" style="width:100%;padding:8px;margin:5px 0;"><br>
+
+        <button style="padding:10px 20px; background:black; color:white; border:none; border-radius:5px;">Submit</button>
+    </form>
+</section>
+
+
+
+<!-- Dashboard Section -->
+<section class="section" id="dashboard">
+    <h2>User Dashboard</h2>
+    <p>এটি আলাদা ড্যাশবোর্ড যেখানে ইউজার তাদের Deposit / Withdraw স্ট্যাটাস দেখতে পাবে।</p>
+
+    <div style="padding:20px; background:#f2f2f2; border-radius:10px; margin-bottom:20px;">
+        <h3>👤 Account Information</h3>
+        <p>নাম: User Name</p>
+        <p>ফোন: 01XXXXXXXXX</p>
+        <p>বর্তমান ব্যালেন্স: 0.00 ৳</p>
     </div>
 
-    <!-- ইউজার ড্যাশবোর্ড -->
-    <div id="dashboard" class="dashboard">
-        <header>ড্যাশবোর্ড - <span id="userPhone"></span></header>
-        <div class="balance">
-            <h2>ব্যালেন্স: ৳ <span id="balance">0</span></h2>
-            <p>ফ্রি বোনাস দিন: <span id="freeDay">0</span>/4</p>
-            <p>র‍্যাঙ্ক: <span id="rank">None</span></p>
-        </div>
-
-        <div class="rank-item">
-            <h3>H1 → ৫০০ টাকা = রোজ ৫০</h3>
-            <button class="btn-small" onclick="upgrade('H1',500,50)">আপগ্রেড</button>
-        </div>
-        <div class="rank-item">
-            <h3>H2 → ৫০০০ টাকা = রোজ ৪০০</h3>
-            <button class="btn-small" onclick="upgrade('H2',5000,400)">আপগ্রেড</button>
-        </div>
-        <div class="rank-item">
-            <h3>H3 → ১৫০০০ টাকা = রোজ ১৩০০</h3>
-            <button class="btn-small" onclick="upgrade('H3',15000,1300)">আপগ্রেড</button>
-        </div>
-
-        <button class="btn-small" onclick="openWithdraw()">উইথড্র করুন</button>
-        <button class="btn-small" style="background:#34495e;" onclick="logout()">লগআউট</button>
-
-        <!-- এডমিন বাটন -->
-        <div id="adminBtn" style="display:none;">
-            <button class="btn-small admin-btn" onclick="openAdmin()">⚡ এডমিন প্যানেল</button>
-        </div>
+    <div style="padding:20px; background:#f2f2f2; border-radius:10px; margin-bottom:20px;">
+        <h3>💰 Deposit History</h3>
+        <p>এখানে ইউজারের ডিপোজিট রিকোয়েস্টগুলোর স্ট্যাটাস দেখাবে।</p>
+        <ul>
+            <li>Deposit #1 — Pending</li>
+            <li>Deposit #2 — Approved</li>
+        </ul>
     </div>
 
-    <!-- এডমিন প্যানেল -->
-    <div id="adminPanel" class="dashboard">
-        <header style="background:#8e44ad;">⚡ এডমিন প্যানেল</header>
-        <div class="balance">
-            <h2>মোট ইউজার: <span id="totalUsers">0</span></h2>
-            <h2>মোট ব্যালেন্স: ৳ <span id="totalBalance">0</span></h2>
-        </div>
-        <div class="user-list" id="userList"></div>
-        <button class="btn-small" style="background:#27ae60;" onclick="document.getElementById('adminPanel').style.display='none'; document.getElementById('dashboard').style.display='block';">ব্যাক</button>
+    <div style="padding:20px; background:#f2f2f2; border-radius:10px; margin-bottom:20px;">
+        <h3>📤 Withdraw History</h3>
+        <p>এখানে উইথড্র রিকোয়েস্ট স্ট্যাটাস দেখা যাবে।</p>
+        <ul>
+            <li>Withdraw #1 — Completed</li>
+            <li>Withdraw #2 — Pending</li>
+        </ul>
     </div>
-</div>
 
-<!-- উইথড্র মডাল -->
-<div class="modal" id="withdrawModal">
-    <div class="modal-content">
-        <span class="close" onclick="this.parentElement.parentElement.style.display='none'">×</span>
-        <h2>উইথড্র করুন</h2>
-        <input type="text" placeholder="bKash/Nagad নম্বর" id="wNumber">
-        <input type="number" placeholder="পরিমাণ" id="wAmount">
-        <button style="background:#27ae60;" onclick="submitWithdraw()">সাবমিট</button>
-    </div>
-</div>
+    <button style="padding:12px 25px; background:black; color:white; border:none; border-radius:5px;">Logout</button>
+</section>
 
-<script>
-const ADMIN_PHONE = "01344034681";
-const ADMIN_PASS = "password09";
+</body>
 
-function login(){
-    const phone = document.getElementById('phone').value.trim();
-    const pass = document.getElementById('pass').value;
-
-    if(phone.length < 11 || pass.length < 6){
-        alert("সঠিক তথ্য দিন!");
-        return;
-    }
-
-    let user = {phone, pass, balance:0, freeDay:0, rank:"None", dailyIncome:0, lastBonus:0, lastClaim:0};
-
-    if(phone === ADMIN_PHONE && pass === ADMIN_PASS){
-        user.isAdmin = true;
-        user.balance = 999999;
-        user.rank = "H3 (Admin)";
-    }
-
-    localStorage.setItem('user', JSON.stringify(user));
-    showDashboard();
-}
-
-function showDashboard(){
-    const user = JSON.parse(localStorage.getItem('user'));
-    if(!user){ window.location.reload(); }
-
-    document.getElementById('loginForm').style.display = 'none';
-    document.getElementById('dashboard').style.display = 'block';
-    document.getElementById('userPhone').innerText = user.phone;
-    document.getElementById('balance').innerText = user.balance;
-    document.getElementById('freeDay').innerText = user.freeDay;
-    document.getElementById('rank').innerText = user.rank;
-
-    if(user.isAdmin){
-        document.getElementById('adminBtn').style.display = 'block';
-    }
-
-    // ফ্রি বোনাস + ডেইলি ইনকাম
-    autoBonusAndIncome(user);
-}
-
-function autoBonusAndIncome(user){
-    const now = Date.now();
-    if(user.freeDay < 4 && (now - user.lastBonus) > 10000){ // ডেমোর জন্য 10 সেকেন্ড
-        user.balance += 60;
-        user.freeDay += 1;
-        user.lastBonus = now;
-        localStorage.setItem('user', JSON.stringify(user));
-        alert("ফ্রি বোনাস ৬০ টাকা যোগ হয়েছে!");
-    }
-    if(user.dailyIncome > 0 && (now - user.lastClaim) > 10000){
-        user.balance += user.dailyIncome;
-        user.lastClaim = now;
-        localStorage.setItem('user', JSON.stringify(user));
-        alert(`\( {user.rank} থেকে \){user.dailyIncome} টাকা যোগ হয়েছে!`);
-    }
-    document.getElementById('balance').innerText = user.balance;
-}
-
-function upgrade(rank, deposit, daily){
-    if(confirm(`\( {rank} এর জন্য \){deposit} টাকা ডিপোজিট?`)){
-        const user = JSON.parse(localStorage.getItem('user'));
-        user.balance += deposit;
-        user.rank = rank;
-        user.dailyIncome = daily;
-        localStorage.setItem('user', JSON.stringify(user));
-        alert(`\( {rank} সফল! রোজ \){daily} টাকা পাবেন।`);
-        showDashboard();
-    }
-}
-
-function openWithdraw(){ document.getElementById('withdrawModal').style.display = 'block'; }
-function submitWithdraw(){
-    const amt = document.getElementById('wAmount').value;
-    if(amt >= 300){
-        alert(`উইথড্র রিকোয়েস্ট সফল! ${amt} টাকা ২৪ ঘণ্টায় পাঠানো হবে।`);
-        document.getElementById('withdrawModal').style.display = 'none';
-    }else alert("মিনিমাম ৩০০ টাকা!");
-}
-
-function openAdmin(){
-    document.getElementById('dashboard').style.display = 'none';
-    document.getElementById('adminPanel').style.display = 'block';
-    document.getElementById('totalUsers').innerText = "1 (ডেমো)";
-    document.getElementById('totalBalance').innerText = "999999+";
-    document.getElementById('userList').innerHTML = "<p>এডমিন মোড চালু ⚡</p><p>সবকিছু কন্ট্রোল করতে পারবেন</p>";
-}
-
-function logout(){
-    localStorage.clear();
-    window.location.reload();
-}
-
-window.onload = () => localStorage.getItem('user') && showDashboard();
-</script>
 </body>
 </html>
