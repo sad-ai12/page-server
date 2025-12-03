@@ -3,148 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BDCashPro - রোজগার শুরু করুন</title>
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Cash King BD - রোজগারের রাজা</title>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <style>
+        :root{--p:#667eea;--s:#764ba2;--r:#e74c3c;}
         *{margin:0;padding:0;box-sizing:border-box;font-family:'Hind Siliguri',sans-serif;}
-        body{background:linear-gradient(135deg,#667eea,#764ba2);min-height:100vh;color:#333;}
-        .container{max-width:500px;margin:0 auto;background:#fff;min-height:100vh;position:relative;padding-bottom:70px;}
-        header{
-            background:linear-gradient(135deg,#667eea,#764ba2);
-            color:#fff;padding:20px;text-align:center;border-radius:0 0 30px 30px;
-        }
-        .logo img{height:50px;margin:10px 0;}
-        .lang-btn{
-            position:absolute;top:15px;right:15px;background:#fff;color:#333;
-            padding:8px 15px;border-radius:30px;font-size:14px;
-        }
-        .ref-code{
-            background:#fff;color:#333;margin:20px;border-radius:15px;padding:15px;
-            box-shadow:0 5px 15px rgba(0,0,0,0.1);text-align:center;font-size:20px;font-weight:700;
-        }
-        .copy-btn{background:#e74c3c;color:#fff;padding:8px 20px;border-radius:30px;margin-left:10px;}
-        .section{
-            margin:20px;border-radius:15px;overflow:hidden;
-            box-shadow:0 5px 15px rgba(0,0,0,0.1);
-        }
-        .section-title{
-            background:#ff6b9d;color:#fff;text-align:center;padding:12px;font-size:18px;
-        }
-        .daily-box{
-            background:#fff;padding:20px;text-align:center;
-        }
-        .daily-btn{background:#e74c3c;color:#fff;padding:10px 25px;border-radius:30px;margin:10px;}
-        .gray-btn{background:#95a5a6;color:#fff;padding:10px 25px;border-radius:30px;margin:10px;}
-        .grid{
-            display:grid;grid-template-columns:1fr 1fr;gap:15px;padding:20px;background:#fff;
-        }
-        .grid-item{
-            background:#ffebee;border-radius:15px;padding:20px;text-align:center;
-        }
-        .grid-item h3{font-size:16px;margin-bottom:10px;color:#e91e63;}
-        .grid-item p{font-size:22px;font-weight:700;color:#c2185b;}
+        body{background:linear-gradient(135deg,var(--p),var(--s));min-height:100vh;color:#fff;}
+        .container{max-width:500px;margin:0 auto;background:#fff;min-height:100vh;color:#333;position:relative;padding-bottom:80px;}
+        header{background:linear-gradient(135deg,var(--p),var(--s));padding:20px;text-align:center;border-radius:0 0 30px 30px;position:relative;}
+        .logo{font-size:28px;font-weight:900;color:#fff;}
+        .ref-box{background:#fff;color:#e91e63;margin:20px;border-radius:20px;padding:20px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,0.2);font-size:22px;font-weight:700;}
+        .copy-btn{background:var(--r);color:#fff;padding:10px 25px;border-radius:50px;margin-left:15px;cursor:pointer;border:none;font-size:16px;}
+        .section{margin:20px;border-radius:20px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.15);}
+        .title{background:var(--r);color:#fff;padding:15px;text-align:center;font-size:20px;}
+        .grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;padding:20px;background:#fff;}
+        .box{background:#fff0f4;border-radius:15px;padding:20px;text-align:center;}
+        .box h3{font-size:16px;color:#e91e63;}
+        .box p{font-size:24px;font-weight:900;color:#c2185b;}
         .yellow{background:#fff8e1 !important;color:#ff8f00 !important;}
-        .referral-box{
-            background:#fff;padding:20px;border-radius:15px;margin:20px;
-            box-shadow:0 5px 15px rgba(0,0,0,0.1);text-align:center;
-        }
-        .referral-box h3{font-size:18px;margin-bottom:10px;}
-        .referral-box p{font-size:24px;font-weight:700;color:#e91e63;}
-        .btn-more{
-            background:#2196f3;color:#fff;padding:10px 20px;border-radius:30px;float:right;margin-top:-40px;
-        }
-        .bottom-nav{
-            position:fixed;bottom:0;left:0;right:0;background:#fff;
-            display:flex;justify-content:space-around;padding:10px 0;
-            box-shadow:0 -5px 15px rgba(0,0,0,0.1);border-radius:20px 20px 0 0;
-        }
-        .nav-item{color:#95a5a6;text-align:center;font-size:12px;padding:8px;}
-        .nav-item.active{color:#2196f3;}
-        .nav-item i{font-size:24px;display:block;margin-bottom:5px;}
+        .withdraw-box{background:#e8f5e8;padding:20px;border-radius:15px;margin:20px;text-align:center;}
+        .withdraw-btn{background:#4caf50;color:#fff;padding:12px 30px;border-radius:30px;font-size:18px;margin-top:10px;cursor:pointer;border:none;}
+        .bottom-nav{position:fixed;bottom:0;left:0;right:0;background:#fff;display:flex;justify-content:space-around;padding:12px 0;
+            box-shadow:0 -5px 20px rgba(0,0,0,0.1);border-radius:25px 25px 0 0;z-index:999;}
+        .nav-item{text-align:center;color:#95a5a6;font-size:13px;padding:5px 10px;text-decoration:none;display:block;}
+        .nav-item.active{color:#2196f3;font-weight:bold;}
+        .nav-item i{font-size:26px;display:block;margin-bottom:5px;}
+        .modal{display:none;position:fixed;z-index:1000;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,0.5);}
+        .modal-content{background-color:#fefefe;margin:15% auto;padding:20px;border-radius:10px;width:80%;max-width:400px;text-align:center;color:#333;}
+        .close{color:#aaa;float:right;font-size:28px;font-weight:bold;cursor:pointer;}
+        .daily-btn{background:#e74c3c;color:#fff;padding:12px 40px;border-radius:50px;font-size:18px;cursor:pointer;border:none;}
     </style>
 </head>
 <body>
 <div class="container">
-
     <header>
-        <div class="lang-btn">বাংলা</div>
-        <div class="logo">
-            <h2 style="font-weight:900;">BDCashPro</h2>
-        </div>
+        <div style="position:absolute;top:15px;right:15px;background:#fff;color:#333;padding:8px 20px;border-radius:30px;font-size:14px;">বাংলা</div>
+        <div class="logo">Cash King BD</div>
     </header>
 
     <div style="padding:20px;">
-        <div class="ref-code">
-            আপনার কোড: <span style="letter-spacing:3px;">tnkrff</span>
-            <button class="copy-btn" onclick="copy('tnkrff')">Copy</button>
+        <div class="ref-box">
+            আপনার কোড: BDTK789
+            <button class="copy-btn" id="copyCodeBtn">Copy</button>
         </div>
-
-        <div class="ref-code" style="margin-top:10px;">
-            আপনার রেফার লিংক:<br>
-            <small>https://bd.topcashback.online/register?invite=tnkrff</small>
-            <button class="copy-btn" onclick="copy('https://bd.topcashback.online/register?invite=tnkrff')">Copy</button>
+        <div class="ref-box" style="margin-top:15px;font-size:16px;">
+            https://cash-king-bd.com/register?invite=BDTK789
+            <button class="copy-btn" id="copyLinkBtn">Copy</button>
         </div>
     </div>
 
     <div class="section">
-        <div class="section-title">দৈনিক পুরস্কার</div>
-        <div class="daily-box">
-            <p>সরাসরি রেফারেলস ০</p>
-            <p style="font-size:24px;margin:15px 0;">দৈনিক পুরস্কার TK 0</p>
-            <button class="daily-btn">আজকের</button>
-            <button class="gray-btn">নিন</button>
+        <div class="title">দৈনিক পুরস্কার</div>
+        <div style="background:#fff;padding:25px;text-align:center;">
+            <p style="font-size:18px;">দৈনিক পুরস্কার</p>
+            <p style="font-size:32px;margin:15px 0;color:#e91e63;" id="dailyBalance">TK 0</p>
+            <button class="daily-btn" id="claimDailyBtn">আজকের নিন</button>
         </div>
     </div>
 
     <div class="section">
         <div class="grid">
-            <div class="grid-item">
-                <h3>মোট দলের সংখ্যা</h3>
-                <p>1</p>
-            </div>
-            <div class="grid-item">
-                <h3>মোট প্রাপ্ত কমিশন</h3>
-                <p>TK 0</p>
-            </div>
-            <div class="grid-item yellow">
-                <h3>মোট দলের রিচার্জ</h3>
-                <p>TK 0</p>
-            </div>
-            <div class="grid-item">
-                <h3>মোট দলের উত্তোলন</h3>
-                <p>TK 0</p>
-            </div>
+            <div class="box"><h3>মোট দল</h3><p>127</p></div>
+            <div class="box"><h3>মোট কমিশন</h3><p>TK 4,850</p></div>
+            <div class="box yellow"><h3>দলের রিচার্জ</h3><p>TK 28,000</p></div>
+            <div class="box"><h3>দলের উইথড্র</h3><p>TK 9,200</p></div>
         </div>
     </div>
 
-    <div class="referral-box">
-        <h3>সরাসরি রেফারেলস (২০%)</h3>
-        <p>0/1 <span style="float:right;">TK 0</span></p>
-        <button class="btn-more">বিস্তারিত ></button>
+    <div class="withdraw-box">
+        <h3 style="color:#2e7d32;font-size:20px;">উইথড্র করুন</h3>
+        <p style="color:#2e7d32;">বর্তমান ব্যালেন্স: TK 4,850 (মিনিমাম 300)</p>
+        <button class="withdraw-btn" id="withdrawBtn">উইথড্র রিকোয়েস্ট</button>
     </div>
+</div>
 
-    <div class="referral-box">
-        <h3>অপরোক্ষ রেফারেলস (১%)</h3>
-        <p>0/0 <span style="float:right;">TK 0</span></p>
-        <button class="btn-more" style="background:#2196f3;">বিস্তারিত</button>
+<!-- উইথড্র মডাল -->
+<div id="withdrawModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeModal">&times;</span>
+        <h2>উইথড্র ফর্ম</h2>
+        <p>পদ্ধতি: bKash / Nagad / Rocket</p>
+        <input type="text" id="phoneInput" placeholder="মোবাইল নম্বর (017xxxxxxxx)" style="width:100%;padding:10px;margin:10px 0;border-radius:5px;border:1px solid #ddd;">
+        <input type="number" id="amountInput" placeholder="উইথড্র পরিমাণ (TK)" style="width:100%;padding:10px;margin:10px 0;border-radius:5px;border:1px solid #ddd;">
+        <button class="withdraw-btn" style="width:100%;margin-top:10px;" id="submitWithdrawBtn">সাবমিট করুন</button>
     </div>
-
 </div>
 
 <div class="bottom-nav">
-    <div class="nav-item"><i class="fas fa-home"></i>হোম</div>
-    <div class="nav-item"><i class="far fa-clock"></i>ইতিহাস</div>
-    <div class="nav-item active"><i class="fas fa-user"></i>দল</div>
-    <div class="nav-item"><i class="fas fa-chart-bar"></i>কোম্পানি</div>
-    <div class="nav-item"><i class="fas fa-user-circle"></i>প্রোফাইল</div>
+    <a href="#" class="nav-item active"><i class="fas fa-home"></i>হোম</a>
+    <a href="#" class="nav-item"><i class="far fa-clock"></i>ইতিহাস</a>
+    <a href="#" class="nav-item"><i class="fas fa-users"></i>দল</a>
+    <a href="#" class="nav-item"><i class="fas fa-building"></i>কোম্পানি</a>
+    <a href="#" class="nav-item"><i class="fas fa-user-circle"></i>প্রোফাইল</a>
 </div>
 
 <script>
-function copy(text) {
-    navigator.clipboard.writeText(text);
-    alert("কপি হয়েছে: " + text);
-}
+document.addEventListener('DOMContentLoaded', function() {
+    // Copy functions
+    document.getElementById('copyCodeBtn').addEventListener('click', function() {
+        navigator.clipboard.writeText('BDTK789').then(() => alert('কোড কপি হয়েছে!'));
+    });
+    document.getElementById('copyLinkBtn').addEventListener('click', function() {
+        navigator.clipboard.writeText('https://cash-king-bd.com/register?invite=BDTK789').then(() => alert('লিংক কপি হয়েছে!'));
+    });
+
+    // Daily claim
+    let dailyBal = 0;
+    document.getElementById('claimDailyBtn').addEventListener('click', function() {
+        dailyBal += 50;
+        document.getElementById('dailyBalance').innerText = 'TK ' + dailyBal;
+        alert('আজকের পুরস্কার TK 50 যোগ হলো! 🎉');
+    });
+
+    // Withdraw modal
+    document.getElementById('withdrawBtn').addEventListener('click', function() {
+        document.getElementById('withdrawModal').style.display = 'block';
+    });
+    document.getElementById('closeModal').addEventListener('click', function() {
+        document.getElementById('withdrawModal').style.display = 'none';
+    });
+    window.addEventListener('click', function(event) {
+        const modal = document.getElementById('withdrawModal');
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+    document.getElementById('submitWithdrawBtn').addEventListener('click', function() {
+        const phone = document.getElementById('phoneInput').value;
+        const amount = document.getElementById('amountInput').value;
+        if (phone && amount >= 300) {
+            alert('উইথড্র রিকোয়েস্ট সাবমিট হয়েছে! ' + amount + ' TK ' + phone + ' তে পাঠানো হবে। ২৪ ঘণ্টার মধ্যে প্রসেস হবে।');
+            document.getElementById('withdrawModal').style.display = 'none';
+        } else {
+            alert('সঠিক নম্বর এবং মিনিমাম ৩০০ টাকা দিন!');
+        }
+    });
+});
 </script>
 </body>
 </html>
