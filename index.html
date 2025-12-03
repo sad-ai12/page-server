@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BDCashPro - রোজগার শুরু করুন</title>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;font-family:'Hind Siliguri',sans-serif;}
+        body{background:linear-gradient(135deg,#667eea,#764ba2);min-height:100vh;color:#333;}
+        .container{max-width:500px;margin:0 auto;background:#fff;min-height:100vh;position:relative;padding-bottom:70px;}
+        header{
+            background:linear-gradient(135deg,#667eea,#764ba2);
+            color:#fff;padding:20px;text-align:center;border-radius:0 0 30px 30px;
+        }
+        .logo img{height:50px;margin:10px 0;}
+        .lang-btn{
+            position:absolute;top:15px;right:15px;background:#fff;color:#333;
+            padding:8px 15px;border-radius:30px;font-size:14px;
+        }
+        .ref-code{
+            background:#fff;color:#333;margin:20px;border-radius:15px;padding:15px;
+            box-shadow:0 5px 15px rgba(0,0,0,0.1);text-align:center;font-size:20px;font-weight:700;
+        }
+        .copy-btn{background:#e74c3c;color:#fff;padding:8px 20px;border-radius:30px;margin-left:10px;}
+        .section{
+            margin:20px;border-radius:15px;overflow:hidden;
+            box-shadow:0 5px 15px rgba(0,0,0,0.1);
+        }
+        .section-title{
+            background:#ff6b9d;color:#fff;text-align:center;padding:12px;font-size:18px;
+        }
+        .daily-box{
+            background:#fff;padding:20px;text-align:center;
+        }
+        .daily-btn{background:#e74c3c;color:#fff;padding:10px 25px;border-radius:30px;margin:10px;}
+        .gray-btn{background:#95a5a6;color:#fff;padding:10px 25px;border-radius:30px;margin:10px;}
+        .grid{
+            display:grid;grid-template-columns:1fr 1fr;gap:15px;padding:20px;background:#fff;
+        }
+        .grid-item{
+            background:#ffebee;border-radius:15px;padding:20px;text-align:center;
+        }
+        .grid-item h3{font-size:16px;margin-bottom:10px;color:#e91e63;}
+        .grid-item p{font-size:22px;font-weight:700;color:#c2185b;}
+        .yellow{background:#fff8e1 !important;color:#ff8f00 !important;}
+        .referral-box{
+            background:#fff;padding:20px;border-radius:15px;margin:20px;
+            box-shadow:0 5px 15px rgba(0,0,0,0.1);text-align:center;
+        }
+        .referral-box h3{font-size:18px;margin-bottom:10px;}
+        .referral-box p{font-size:24px;font-weight:700;color:#e91e63;}
+        .btn-more{
+            background:#2196f3;color:#fff;padding:10px 20px;border-radius:30px;float:right;margin-top:-40px;
+        }
+        .bottom-nav{
+            position:fixed;bottom:0;left:0;right:0;background:#fff;
+            display:flex;justify-content:space-around;padding:10px 0;
+            box-shadow:0 -5px 15px rgba(0,0,0,0.1);border-radius:20px 20px 0 0;
+        }
+        .nav-item{color:#95a5a6;text-align:center;font-size:12px;padding:8px;}
+        .nav-item.active{color:#2196f3;}
+        .nav-item i{font-size:24px;display:block;margin-bottom:5px;}
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <header>
+        <div class="lang-btn">বাংলা</div>
+        <div class="logo">
+            <h2 style="font-weight:900;">BDCashPro</h2>
+        </div>
+    </header>
+
+    <div style="padding:20px;">
+        <div class="ref-code">
+            আপনার কোড: <span style="letter-spacing:3px;">tnkrff</span>
+            <button class="copy-btn" onclick="copy('tnkrff')">Copy</button>
+        </div>
+
+        <div class="ref-code" style="margin-top:10px;">
+            আপনার রেফার লিংক:<br>
+            <small>https://bd.topcashback.online/register?invite=tnkrff</small>
+            <button class="copy-btn" onclick="copy('https://bd.topcashback.online/register?invite=tnkrff')">Copy</button>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">দৈনিক পুরস্কার</div>
+        <div class="daily-box">
+            <p>সরাসরি রেফারেলস ০</p>
+            <p style="font-size:24px;margin:15px 0;">দৈনিক পুরস্কার TK 0</p>
+            <button class="daily-btn">আজকের</button>
+            <button class="gray-btn">নিন</button>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="grid">
+            <div class="grid-item">
+                <h3>মোট দলের সংখ্যা</h3>
+                <p>1</p>
+            </div>
+            <div class="grid-item">
+                <h3>মোট প্রাপ্ত কমিশন</h3>
+                <p>TK 0</p>
+            </div>
+            <div class="grid-item yellow">
+                <h3>মোট দলের রিচার্জ</h3>
+                <p>TK 0</p>
+            </div>
+            <div class="grid-item">
+                <h3>মোট দলের উত্তোলন</h3>
+                <p>TK 0</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="referral-box">
+        <h3>সরাসরি রেফারেলস (২০%)</h3>
+        <p>0/1 <span style="float:right;">TK 0</span></p>
+        <button class="btn-more">বিস্তারিত ></button>
+    </div>
+
+    <div class="referral-box">
+        <h3>অপরোক্ষ রেফারেলস (১%)</h3>
+        <p>0/0 <span style="float:right;">TK 0</span></p>
+        <button class="btn-more" style="background:#2196f3;">বিস্তারিত</button>
+    </div>
+
+</div>
+
+<div class="bottom-nav">
+    <div class="nav-item"><i class="fas fa-home"></i>হোম</div>
+    <div class="nav-item"><i class="far fa-clock"></i>ইতিহাস</div>
+    <div class="nav-item active"><i class="fas fa-user"></i>দল</div>
+    <div class="nav-item"><i class="fas fa-chart-bar"></i>কোম্পানি</div>
+    <div class="nav-item"><i class="fas fa-user-circle"></i>প্রোফাইল</div>
+</div>
+
+<script>
+function copy(text) {
+    navigator.clipboard.writeText(text);
+    alert("কপি হয়েছে: " + text);
+}
+</script>
+</body>
+</html>
